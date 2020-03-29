@@ -10,10 +10,10 @@ import Foundation
 
 struct BitcoinData: Codable {
     let price: String
-    let currency: String
-    let name: String
     
     var shortPrice: String {
         return String(price.dropLast(6))
     }
 }
+
+

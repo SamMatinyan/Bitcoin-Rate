@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var priceLabel: UILabel!
-    
+    @IBOutlet weak var btcLabel: UILabel!
+    @IBOutlet weak var ethLabel: UILabel!
+    @IBOutlet weak var xrpLabel: UILabel!
     
     var bitcoinManager = BitcoinManager()
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         bitcoinManager.delegate = self
-       // bitcoinManager.fetchPrice(currency: "GBP")
+        bitcoinManager.fetchPrice(currency: "GBP")
     }
     
     @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
@@ -39,7 +40,9 @@ class ViewController: UIViewController {
 extension ViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
           DispatchQueue.main.async {
-            self.priceLabel.text = bitcoin[0].shortPrice
+            self.btcLabel.text = bitcoin[0].shortPrice
+            self.ethLabel.text = bitcoin[1].shortPrice
+            self.xrpLabel.text = bitcoin[2].shortPrice
               }
           }
     

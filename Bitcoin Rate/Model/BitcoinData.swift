@@ -12,7 +12,7 @@ struct BitcoinData: Codable {
     let price: String
     
     var shortPrice: String {
-        return String(price.dropLast(6))
+        return String(price.dropLast(7))
     }
 }
 

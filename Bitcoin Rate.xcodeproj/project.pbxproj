@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18225D4424310CA300D19671 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18225D4324310CA300D19671 /* InfoViewController.swift */; };
+		18225D4624312B0300D19671 /* SwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18225D4524312B0300D19671 /* SwipingController.swift */; };
 		184B3CD0242E24DA00F4AC8C /* BitcoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B3CCF242E24DA00F4AC8C /* BitcoinManager.swift */; };
 		184B3CD3242E252C00F4AC8C /* BitcoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B3CD2242E252C00F4AC8C /* BitcoinData.swift */; };
 		18911787242BA65B00C5DD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911786242BA65B00C5DD62 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18225D4324310CA300D19671 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		18225D4524312B0300D19671 /* SwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingController.swift; sourceTree = "<group>"; };
 		184B3CCF242E24DA00F4AC8C /* BitcoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinManager.swift; sourceTree = "<group>"; };
 		184B3CD2242E252C00F4AC8C /* BitcoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinData.swift; sourceTree = "<group>"; };
 		18911783242BA65B00C5DD62 /* Bitcoin Rate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Rate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				1891178A242BA65B00C5DD62 /* ViewController.swift */,
+				18225D4324310CA300D19671 /* InfoViewController.swift */,
+				18225D4524312B0300D19671 /* SwipingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,8 +176,10 @@
 			files = (
 				1891178B242BA65B00C5DD62 /* ViewController.swift in Sources */,
 				18911787242BA65B00C5DD62 /* AppDelegate.swift in Sources */,
+				18225D4624312B0300D19671 /* SwipingController.swift in Sources */,
 				184B3CD0242E24DA00F4AC8C /* BitcoinManager.swift in Sources */,
 				18911789242BA65B00C5DD62 /* SceneDelegate.swift in Sources */,
+				18225D4424310CA300D19671 /* InfoViewController.swift in Sources */,
 				184B3CD3242E252C00F4AC8C /* BitcoinData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

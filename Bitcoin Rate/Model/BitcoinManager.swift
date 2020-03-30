@@ -25,15 +25,9 @@ struct BitcoinManager {
     
     func performRequest(with urlString: String) {
         
-            //Step1-Create a URL
-        
-            if let url = URL(string: urlString) {
-        
-            //Step2-Create a URLSession
+        if let url = URL(string: urlString) {
             
             let session = URLSession(configuration: .default)
-            
-            //Step3-Give URLSession a task
             
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -47,7 +41,6 @@ struct BitcoinManager {
                     }
                 }
             }
-            //Step4-Start the task
             
             task.resume()
             
@@ -58,7 +51,7 @@ struct BitcoinManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode([BitcoinData].self, from: bitcoinData)
-          
+            
             return decodedData
         } catch {
             delegate?.didFailWithError(error: error)

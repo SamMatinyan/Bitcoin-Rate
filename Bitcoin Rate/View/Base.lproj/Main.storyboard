@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-hh-ocd">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,17 +49,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE4-LA-Sya">
-                                <rect key="frame" x="136.66666666666666" y="720" width="102" height="48"/>
-                                <color key="backgroundColor" name="Color"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Get Info">
-                                    <color key="titleColor" red="0.68627450980392157" green="0.49803921568627452" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="infoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="57w-LZ-VTi"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="EPq-7A-c6F" userLabel="ETH Stack">
                                 <rect key="frame" x="9.3333333333333428" y="443.33333333333331" width="356.66666666666663" height="44.333333333333314"/>
                                 <subviews>
@@ -123,47 +112,66 @@
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Prb-DV-9sm"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="top" secondItem="EPq-7A-c6F" secondAttribute="bottom" constant="40" id="Sw1-wo-d3s"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VEM-Rv-HY1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wE4-LA-Sya" secondAttribute="bottom" constant="10" id="Vmf-aI-TVB"/>
                             <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="9SB-0h-2gj" secondAttribute="bottom" constant="40" id="dP0-X6-nfB"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="top" secondItem="1Zp-HE-qzs" secondAttribute="bottom" constant="40" id="g5B-LU-yde"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="top" secondItem="dco-uI-YX1" secondAttribute="bottom" constant="65" id="gps-Id-L8p"/>
-                            <constraint firstItem="wE4-LA-Sya" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m9H-h0-3ie"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQ5-Sc-WnC"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ql3-8a-fRR"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="us8-0H-6Ya"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Rate" image="dollarsign.circle" catalog="system" id="fLR-kv-bAX"/>
                     <connections>
                         <outlet property="btcLabel" destination="cLZ-eo-7Dj" id="JRW-DB-GVZ"/>
                         <outlet property="ethLabel" destination="K4g-sJ-WnQ" id="Xnc-vN-JqM"/>
                         <outlet property="xrpLabel" destination="Rdj-Bb-4lg" id="m5e-y4-COP"/>
-                        <segue destination="34h-H6-c6M" kind="show" identifier="ideSeg" id="qzS-7f-oE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="128.57142857142856"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="02E-Xc-pMy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRb-81-695" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="dG6-hh-ocd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="awS-CP-LTg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ada-NB-cuy"/>
+                        <segue destination="34h-H6-c6M" kind="relationship" relationship="viewControllers" id="b0q-8J-2BY"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-918" y="542"/>
+        </scene>
+        <!--Info-->
         <scene sceneID="DeA-oy-bVX">
             <objects>
                 <viewController id="34h-H6-c6M" customClass="InfoViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LVn-T1-ivg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Color"/>
                         <viewLayoutGuide key="safeArea" id="uxd-eV-dX8"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="info.circle" catalog="system" id="3hb-ad-eMx"/>
                     <navigationItem key="navigationItem" id="v4S-CF-e2p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLl-VG-xUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="129"/>
+            <point key="canvasLocation" x="135" y="932"/>
         </scene>
     </scenes>
     <resources>
         <image name="BitcoinGold" width="500" height="500"/>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -16,6 +16,7 @@
 		1891178E242BA65B00C5DD62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1891178C242BA65B00C5DD62 /* Main.storyboard */; };
 		18911790242BA65C00C5DD62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1891178F242BA65C00C5DD62 /* Assets.xcassets */; };
 		18911793242BA65C00C5DD62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18911791242BA65C00C5DD62 /* LaunchScreen.storyboard */; };
+		189DA9F42496C07700AFAEB8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DA9F32496C07700AFAEB8 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1891178F242BA65C00C5DD62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18911792242BA65C00C5DD62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18911794242BA65C00C5DD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189DA9F32496C07700AFAEB8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				1891178A242BA65B00C5DD62 /* ViewController.swift */,
 				18225D4324310CA300D19671 /* InfoViewController.swift */,
+				189DA9F32496C07700AFAEB8 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				18911787242BA65B00C5DD62 /* AppDelegate.swift in Sources */,
 				184B3CD0242E24DA00F4AC8C /* BitcoinManager.swift in Sources */,
 				18911789242BA65B00C5DD62 /* SceneDelegate.swift in Sources */,
+				189DA9F42496C07700AFAEB8 /* WebViewController.swift in Sources */,
 				18225D4424310CA300D19671 /* InfoViewController.swift in Sources */,
 				184B3CD3242E252C00F4AC8C /* BitcoinData.swift in Sources */,
 			);

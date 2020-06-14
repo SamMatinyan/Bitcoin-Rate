@@ -41,9 +41,7 @@ struct BitcoinManager {
                     }
                 }
             }
-            
             task.resume()
-            
         }
     }
     

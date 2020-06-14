@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-hh-ocd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-hh-ocd">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -44,7 +44,7 @@
                                             <constraint firstAttribute="width" constant="200" id="Gi0-dM-Vxq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <color key="textColor" red="0.6868029833" green="0.49679803849999998" blue="0.16040936110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -84,7 +84,7 @@
                                             <constraint firstAttribute="width" constant="200" id="mFT-pR-uiF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <color key="textColor" red="0.68627450980392157" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -135,7 +135,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="02E-Xc-pMy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TRb-81-695" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="dG6-hh-ocd" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="awS-CP-LTg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -144,11 +143,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ada-NB-cuy"/>
-                        <segue destination="34h-H6-c6M" kind="relationship" relationship="viewControllers" id="b0q-8J-2BY"/>
+                        <segue destination="Tld-q0-cdZ" kind="relationship" relationship="viewControllers" id="tXE-uD-6mq"/>
+                        <segue destination="34h-H6-c6M" kind="relationship" relationship="viewControllers" id="g5t-Vu-Fvh"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRb-81-695" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-918" y="542"/>
+            <point key="canvasLocation" x="-1577" y="932"/>
         </scene>
         <!--Info-->
         <scene sceneID="DeA-oy-bVX">
@@ -167,16 +168,37 @@
             </objects>
             <point key="canvasLocation" x="135" y="932"/>
         </scene>
+        <!--News-->
+        <scene sceneID="lI3-nE-eY3">
+            <objects>
+                <viewController id="Tld-q0-cdZ" customClass="WebViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8lV-rl-TVW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bmz-WB-HzF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" image="text.bubble" catalog="system" id="0sh-be-qTj"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9N-z0-wCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="1705"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BitcoinGold" width="500" height="500"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color2">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorGold">
+            <color red="0.72549019607843135" green="0.50980392156862742" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

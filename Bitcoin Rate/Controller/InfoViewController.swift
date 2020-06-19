@@ -42,18 +42,15 @@ class InfoViewController: UIViewController {
         return textView
     }()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(bitcoinImageView)
-        view.addSubview(descriptionTextView)
-        
         setupLayout()
     }
 
-
     func setupLayout() {
+         view.addSubview(bitcoinImageView)
+         view.addSubview(descriptionTextView)
+        
         bitcoinImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive        = true
         bitcoinImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         bitcoinImageView.widthAnchor.constraint(equalToConstant: 200).isActive                 = true
@@ -63,7 +60,5 @@ class InfoViewController: UIViewController {
         descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive         = true
         descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24).isActive      = true
         descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive            = true
-    
     }
-
 }

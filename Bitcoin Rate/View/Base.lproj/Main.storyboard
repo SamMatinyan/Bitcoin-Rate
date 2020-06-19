@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-hh-ocd">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,84 +13,80 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BitcoinGold" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-6G-E4o">
-                                <rect key="frame" x="75" y="69" width="225" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="dgk-is-maX"/>
-                                    <constraint firstAttribute="width" constant="225" id="eUm-t7-80U"/>
-                                </constraints>
+                                <rect key="frame" x="75" y="25" width="225" height="148"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SB-0h-2gj">
-                                <rect key="frame" x="70" y="259" width="235" height="60"/>
+                                <rect key="frame" x="70" y="183" width="235" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
                                 <color key="textColor" name="Color2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="1Zp-HE-qzs" userLabel="BTC Stack">
-                                <rect key="frame" x="9.6666666666666572" y="359" width="356" height="44.333333333333314"/>
+                                <rect key="frame" x="9.5" y="283" width="356" height="44.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9y-AB-gnJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                        <color key="textColor" name="Color2"/>
+                                        <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-eo-7Dj">
-                                        <rect key="frame" x="156" y="0.0" width="200" height="44.333333333333336"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-eo-7Dj">
+                                        <rect key="frame" x="156" y="0.0" width="200" height="44.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Gi0-dM-Vxq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <color key="textColor" name="ColorGold"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="EPq-7A-c6F" userLabel="ETH Stack">
-                                <rect key="frame" x="9.3333333333333428" y="443.33333333333331" width="356.66666666666663" height="44.333333333333314"/>
+                                <rect key="frame" x="9.5" y="367.5" width="356.5" height="44.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCx-pY-RSA" userLabel="1 ETH">
-                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="44.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                        <color key="textColor" name="Color2"/>
+                                        <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-sJ-WnQ">
-                                        <rect key="frame" x="156.66666666666663" y="0.0" width="200" height="44.333333333333336"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-sJ-WnQ">
+                                        <rect key="frame" x="156.5" y="0.0" width="200" height="44.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="M92-Gf-1Vq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <color key="textColor" red="0.68627450980392157" green="0.49803921568627452" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="dco-uI-YX1" userLabel="XRP Stack">
-                                <rect key="frame" x="9.6666666666666572" y="527.66666666666663" width="355.66666666666674" height="44.333333333333371"/>
+                                <rect key="frame" x="9.5" y="452" width="356" height="44.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 XRP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGX-Jj-UVT">
-                                        <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="44.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                        <color key="textColor" name="Color2"/>
+                                        <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdj-Bb-4lg">
-                                        <rect key="frame" x="155.66666666666669" y="0.0" width="200" height="44.333333333333336"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdj-Bb-4lg">
+                                        <rect key="frame" x="156" y="0.0" width="200" height="44.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="mFT-pR-uiF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                        <color key="textColor" name="ColorGold"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xs6-gf-ue3">
-                                <rect key="frame" x="20" y="637" width="335" height="32"/>
+                                <rect key="frame" x="20" y="561.5" width="335" height="32"/>
                                 <color key="backgroundColor" name="Color"/>
                                 <segments>
                                     <segment title="GBP🇬🇧"/>
@@ -102,19 +98,34 @@
                                     <action selector="currencyDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="O9f-Cw-107"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wD0-iw-Qgp">
+                                <rect key="frame" x="20" y="242" width="335" height="32"/>
+                                <segments>
+                                    <segment title="Short"/>
+                                    <segment title="Large"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sizeDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="aVt-XX-51b"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
                             <constraint firstItem="1Zp-HE-qzs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3PN-Mi-FpI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xs6-gf-ue3" secondAttribute="trailing" constant="20" id="8FB-Y4-HeT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wD0-iw-Qgp" secondAttribute="trailing" constant="20" id="FbI-6P-TX3"/>
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="top" secondItem="8x2-6G-E4o" secondAttribute="bottom" constant="10" id="H0J-hx-IGl"/>
+                            <constraint firstItem="8x2-6G-E4o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.221675" id="Hqj-kA-cR3"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IZk-Uc-lNB"/>
+                            <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="wD0-iw-Qgp" secondAttribute="bottom" constant="10" id="OFV-lQ-BVt"/>
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Prb-DV-9sm"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="top" secondItem="EPq-7A-c6F" secondAttribute="bottom" constant="40" id="Sw1-wo-d3s"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VEM-Rv-HY1"/>
                             <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="9SB-0h-2gj" secondAttribute="bottom" constant="40" id="dP0-X6-nfB"/>
+                            <constraint firstItem="8x2-6G-E4o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="dyg-uv-Wdr"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="top" secondItem="1Zp-HE-qzs" secondAttribute="bottom" constant="40" id="g5B-LU-yde"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="top" secondItem="dco-uI-YX1" secondAttribute="bottom" constant="65" id="gps-Id-L8p"/>
+                            <constraint firstItem="wD0-iw-Qgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l8s-BC-0gS"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQ5-Sc-WnC"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ql3-8a-fRR"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="us8-0H-6Ya"/>
@@ -130,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="128.57142857142856"/>
+            <point key="canvasLocation" x="135.19999999999999" y="128.57142857142858"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="02E-Xc-pMy">
@@ -156,7 +167,7 @@
             <objects>
                 <viewController id="34h-H6-c6M" customClass="InfoViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LVn-T1-ivg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Color"/>
                         <viewLayoutGuide key="safeArea" id="uxd-eV-dX8"/>
@@ -173,7 +184,7 @@
             <objects>
                 <viewController id="Tld-q0-cdZ" customClass="WebViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8lV-rl-TVW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Bmz-WB-HzF"/>

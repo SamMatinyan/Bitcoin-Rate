@@ -14,33 +14,59 @@ class ViewController: UIViewController {
     @IBOutlet weak var xrpLabel: UILabel!
     
     private var bitcoinManager = BitcoinManager()
-    private let activityView = UIActivityIndicatorView(style: .medium)
-    private var curr = ""
+    private let activityView   = UIActivityIndicatorView(style: .medium)
+    private var shortCurrName  = ""
+    private var currency       = ""
+    private var short          = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showActivityIndicatory()
-
+        showActivityIndicator()
+        
         bitcoinManager.delegate = self
         bitcoinManager.fetchPrice(currency: "GBP")
-        curr = "￡"
+        shortCurrName = "￡"
+        currency = "GBP"
     }
     
-    @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
-        showActivityIndicatory()
+    //MARK: - Size change
+    
+    @IBAction func sizeDidChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            bitcoinManager.fetchPrice(currency: "GBP")
-            curr = "￡"
+            showActivityIndicator()
+            short = true
+            bitcoinManager.fetchPrice(currency: currency)
         case 1:
-            bitcoinManager.fetchPrice(currency: "EUR")
-            curr = "€"
+            showActivityIndicator()
+            short = false
+            bitcoinManager.fetchPrice(currency: currency)
+        default:
+            short = true
+        }
+    }
+    
+    //MARK: - Currency change
+    
+    @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
+        showActivityIndicator()
+        switch sender.selectedSegmentIndex {
+        case 0:
+            currency = "GBP"
+            bitcoinManager.fetchPrice(currency: currency)
+            shortCurrName = "￡"
+        case 1:
+            currency = "EUR"
+            bitcoinManager.fetchPrice(currency: currency)
+            shortCurrName = "€"
         case 2:
-            bitcoinManager.fetchPrice(currency: "USD")
-            curr = "＄"
+            currency = "USD"
+            bitcoinManager.fetchPrice(currency: currency)
+            shortCurrName = "＄"
         case 3:
-            bitcoinManager.fetchPrice(currency: "RUB")
-            curr = "₽"
+            currency = "RUB"
+            bitcoinManager.fetchPrice(currency: currency)
+            shortCurrName = "₽"
         default:
             print("?")
         }
@@ -48,26 +74,35 @@ class ViewController: UIViewController {
 }
 extension ViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
-          DispatchQueue.main.async {
-            self.btcLabel.text = bitcoin[0].shortPrice + self.curr
-            self.ethLabel.text = bitcoin[1].shortPrice + self.curr
-            self.xrpLabel.text = bitcoin[2].shortPrice + self.curr
-            self.activityView.stopAnimating()
-              }
-          }
+        if short == true {
+            DispatchQueue.main.async {
+                self.btcLabel.text = bitcoin[0].shortPrice + self.shortCurrName
+                self.ethLabel.text = bitcoin[1].shortPrice + self.shortCurrName
+                self.xrpLabel.text = bitcoin[2].shortPrice + self.shortCurrName
+                self.activityView.stopAnimating()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.btcLabel.text = bitcoin[0].price + self.shortCurrName
+                self.ethLabel.text = bitcoin[1].price + self.shortCurrName
+                self.xrpLabel.text = bitcoin[2].price + self.shortCurrName
+                self.activityView.stopAnimating()
+            }
+        }
+    }
     
     func didFailWithError(error: Error) {
         print(error)
     }
     
-     func showActivityIndicatory() {
+    func showActivityIndicator() {
         activityView.color = .darkGray
         activityView.center = self.view.center
         self.view.addSubview(activityView)
         activityView.startAnimating()
     }
 }
-    
+
 
 
 

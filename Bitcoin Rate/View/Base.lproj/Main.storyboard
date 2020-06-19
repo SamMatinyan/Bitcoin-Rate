@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="1Zp-HE-qzs" userLabel="BTC Stack">
-                                <rect key="frame" x="9.5" y="283" width="356" height="44.5"/>
+                                <rect key="frame" x="9.5" y="319" width="356" height="44.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9y-AB-gnJ">
                                         <rect key="frame" x="0.0" y="0.0" width="71" height="44.5"/>
@@ -46,7 +46,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="EPq-7A-c6F" userLabel="ETH Stack">
-                                <rect key="frame" x="9.5" y="367.5" width="356.5" height="44.5"/>
+                                <rect key="frame" x="9.5" y="403.5" width="356.5" height="44.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCx-pY-RSA" userLabel="1 ETH">
                                         <rect key="frame" x="0.0" y="0.0" width="71.5" height="44.5"/>
@@ -66,7 +66,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="dco-uI-YX1" userLabel="XRP Stack">
-                                <rect key="frame" x="9.5" y="452" width="356" height="44.5"/>
+                                <rect key="frame" x="9.5" y="488" width="356" height="44.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 XRP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGX-Jj-UVT">
                                         <rect key="frame" x="0.0" y="0.0" width="71" height="44.5"/>
@@ -86,7 +86,7 @@
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xs6-gf-ue3">
-                                <rect key="frame" x="20" y="561.5" width="335" height="32"/>
+                                <rect key="frame" x="20" y="567" width="335" height="32"/>
                                 <color key="backgroundColor" name="Color"/>
                                 <segments>
                                     <segment title="GBP🇬🇧"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wD0-iw-Qgp">
-                                <rect key="frame" x="20" y="242" width="335" height="32"/>
+                                <rect key="frame" x="20" y="258" width="335" height="32"/>
                                 <segments>
                                     <segment title="Short"/>
                                     <segment title="Large"/>
@@ -117,14 +117,14 @@
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="top" secondItem="8x2-6G-E4o" secondAttribute="bottom" constant="10" id="H0J-hx-IGl"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.221675" id="Hqj-kA-cR3"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IZk-Uc-lNB"/>
-                            <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="wD0-iw-Qgp" secondAttribute="bottom" constant="10" id="OFV-lQ-BVt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xs6-gf-ue3" secondAttribute="bottom" constant="20" id="MIZ-3X-KB7"/>
+                            <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="wD0-iw-Qgp" secondAttribute="bottom" constant="30" id="OFV-lQ-BVt"/>
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Prb-DV-9sm"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="top" secondItem="EPq-7A-c6F" secondAttribute="bottom" constant="40" id="Sw1-wo-d3s"/>
+                            <constraint firstItem="wD0-iw-Qgp" firstAttribute="top" secondItem="9SB-0h-2gj" secondAttribute="bottom" constant="15" id="UWI-Zh-cBK"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VEM-Rv-HY1"/>
-                            <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="9SB-0h-2gj" secondAttribute="bottom" constant="40" id="dP0-X6-nfB"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="dyg-uv-Wdr"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="top" secondItem="1Zp-HE-qzs" secondAttribute="bottom" constant="40" id="g5B-LU-yde"/>
-                            <constraint firstItem="xs6-gf-ue3" firstAttribute="top" secondItem="dco-uI-YX1" secondAttribute="bottom" constant="65" id="gps-Id-L8p"/>
                             <constraint firstItem="wD0-iw-Qgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l8s-BC-0gS"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQ5-Sc-WnC"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ql3-8a-fRR"/>

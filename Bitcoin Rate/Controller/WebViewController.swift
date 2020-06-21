@@ -20,12 +20,35 @@ class WebViewController: UIViewController, WKUIDelegate {
         view = webView
     }
     
+    @IBAction func changeLangPressed(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "cryptonews.com", style: .default, handler: { (action) in
+            self.webLoadUrl(url: "https://cryptonews.com/")
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "bitnovosti.com", style: .default, handler: { (action) in
+            self.webLoadUrl(url: "https://bitnovosti.com/")
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true)
+    }
+    
+    //-https://bitnovosti.com/
+    //-https://cryptonews.com/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        webLoadUrl(url: "https://cryptonews.com/")
+    }
 
-        let myURL = URL(string: "https://cryptonews.com/")!
+    func webLoadUrl(url: String) {
+        let myURL = URL(string: url)!
         let request = URLRequest(url: myURL)
         webView.load(request)
     }
-
+    
 }

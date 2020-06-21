@@ -13,6 +13,7 @@ class InfoViewController: UIViewController {
     let bitcoinImageView: UIImageView = {
         let imageView = UIImageView(image:  #imageLiteral(resourceName: "BitcoinGold"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -36,7 +37,7 @@ class InfoViewController: UIViewController {
         textView.attributedText = attributedText
         textView.textAlignment = .center
         textView.isEditable = false
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = UIColor(named: "Color")
         return textView
@@ -52,9 +53,10 @@ class InfoViewController: UIViewController {
          view.addSubview(descriptionTextView)
         
         bitcoinImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive        = true
-        bitcoinImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        bitcoinImageView.widthAnchor.constraint(equalToConstant: 200).isActive                 = true
-        bitcoinImageView.heightAnchor.constraint(equalToConstant: 200).isActive                = true
+        bitcoinImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.221675).isActive = true
+        bitcoinImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
+        bitcoinImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75).isActive = true
+
         
         descriptionTextView.topAnchor.constraint(equalTo: bitcoinImageView.bottomAnchor, constant: 30).isActive = true
         descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive         = true

@@ -86,7 +86,7 @@
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xs6-gf-ue3">
-                                <rect key="frame" x="20" y="567" width="335" height="32"/>
+                                <rect key="frame" x="20" y="562.5" width="335" height="32"/>
                                 <color key="backgroundColor" name="Color"/>
                                 <segments>
                                     <segment title="GBP🇬🇧"/>
@@ -108,6 +108,18 @@
                                     <action selector="sizeDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="aVt-XX-51b"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srg-qM-cBE">
+                                <rect key="frame" x="315" y="20.5" width="40" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="NwM-6c-FoD"/>
+                                    <constraint firstAttribute="height" constant="40" id="ODl-zs-7My"/>
+                                </constraints>
+                                <color key="tintColor" red="0.038585446769999997" green="0.52397078279999998" blue="0.91845256090000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="info.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fEG-TK-TFq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
@@ -117,18 +129,20 @@
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="top" secondItem="8x2-6G-E4o" secondAttribute="bottom" constant="10" id="H0J-hx-IGl"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.221675" id="Hqj-kA-cR3"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IZk-Uc-lNB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xs6-gf-ue3" secondAttribute="bottom" constant="20" id="MIZ-3X-KB7"/>
                             <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="wD0-iw-Qgp" secondAttribute="bottom" constant="30" id="OFV-lQ-BVt"/>
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Prb-DV-9sm"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="top" secondItem="EPq-7A-c6F" secondAttribute="bottom" constant="40" id="Sw1-wo-d3s"/>
                             <constraint firstItem="wD0-iw-Qgp" firstAttribute="top" secondItem="9SB-0h-2gj" secondAttribute="bottom" constant="15" id="UWI-Zh-cBK"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VEM-Rv-HY1"/>
+                            <constraint firstItem="xs6-gf-ue3" firstAttribute="top" secondItem="dco-uI-YX1" secondAttribute="bottom" constant="30" id="dgh-g9-l6a"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="dyg-uv-Wdr"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="top" secondItem="1Zp-HE-qzs" secondAttribute="bottom" constant="40" id="g5B-LU-yde"/>
                             <constraint firstItem="wD0-iw-Qgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l8s-BC-0gS"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pQ5-Sc-WnC"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ql3-8a-fRR"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="us8-0H-6Ya"/>
+                            <constraint firstItem="Srg-qM-cBE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xnt-kT-mdS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Srg-qM-cBE" secondAttribute="trailing" constant="20" id="yxe-1b-PdK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -137,11 +151,25 @@
                         <outlet property="btcLabel" destination="cLZ-eo-7Dj" id="JRW-DB-GVZ"/>
                         <outlet property="ethLabel" destination="K4g-sJ-WnQ" id="Xnc-vN-JqM"/>
                         <outlet property="xrpLabel" destination="Rdj-Bb-4lg" id="m5e-y4-COP"/>
+                        <segue destination="34h-H6-c6M" kind="presentation" identifier="segInfo" id="Kh2-GU-F8t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.19999999999999" y="128.57142857142858"/>
+            <point key="canvasLocation" x="135" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cId-y4-9Gl">
+            <objects>
+                <navigationController id="Vel-0w-5vR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FVe-6z-L9B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awz-5i-fhd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2638" y="931"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="02E-Xc-pMy">
@@ -155,7 +183,6 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ada-NB-cuy"/>
                         <segue destination="Tld-q0-cdZ" kind="relationship" relationship="viewControllers" id="tXE-uD-6mq"/>
-                        <segue destination="34h-H6-c6M" kind="relationship" relationship="viewControllers" id="g5t-Vu-Fvh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRb-81-695" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -167,7 +194,7 @@
             <objects>
                 <viewController id="34h-H6-c6M" customClass="InfoViewController" customModule="Bitcoin_Rate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LVn-T1-ivg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Color"/>
                         <viewLayoutGuide key="safeArea" id="uxd-eV-dX8"/>
@@ -177,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLl-VG-xUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="932"/>
+            <point key="canvasLocation" x="134" y="931"/>
         </scene>
         <!--News-->
         <scene sceneID="lI3-nE-eY3">
@@ -186,15 +213,31 @@
                     <view key="view" contentMode="scaleToFill" id="8lV-rl-TVW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-za-aB0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="News" id="qqE-K8-ENG">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="CCT-3N-P4o">
+                                            <connections>
+                                                <action selector="changeLangPressed:" destination="Tld-q0-cdZ" id="ydb-Pe-r90"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Bmz-WB-HzF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="text.bubble" catalog="system" id="0sh-be-qTj"/>
+                    <navigationItem key="navigationItem" id="hht-bI-xGR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9N-z0-wCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="1705"/>
+            <point key="canvasLocation" x="133.59999999999999" y="1704.1979010494754"/>
         </scene>
     </scenes>
     <resources>

@@ -29,6 +29,13 @@ class ViewController: UIViewController {
         currency = "GBP"
     }
     
+    //MARK: - Info button pressed
+    
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "segInfo", sender: self)
+    }
+    
+    
     //MARK: - Size change
     
     @IBAction func sizeDidChange(_ sender: UISegmentedControl) {

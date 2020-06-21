@@ -20,6 +20,8 @@ class WebViewController: UIViewController, WKUIDelegate {
         view = webView
     }
     
+    //MARK: - Edit button pressed
+    
     @IBAction func changeLangPressed(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -35,9 +37,6 @@ class WebViewController: UIViewController, WKUIDelegate {
         
         self.present(alertController, animated: true)
     }
-    
-    //-https://bitnovosti.com/
-    //-https://cryptonews.com/
     
     override func viewDidLoad() {
         super.viewDidLoad()

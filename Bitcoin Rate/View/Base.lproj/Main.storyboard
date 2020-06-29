@@ -26,16 +26,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="1Zp-HE-qzs" userLabel="BTC Stack">
-                                <rect key="frame" x="9.5" y="319" width="356" height="44.5"/>
+                                <rect key="frame" x="20" y="319" width="335" height="44.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9y-AB-gnJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9y-AB-gnJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLZ-eo-7Dj">
-                                        <rect key="frame" x="156" y="0.0" width="200" height="44.5"/>
+                                        <rect key="frame" x="135" y="0.0" width="200" height="44.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Gi0-dM-Vxq"/>
                                         </constraints>
@@ -46,16 +46,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="EPq-7A-c6F" userLabel="ETH Stack">
-                                <rect key="frame" x="9.5" y="403.5" width="356.5" height="44.5"/>
+                                <rect key="frame" x="20" y="403.5" width="335" height="44.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCx-pY-RSA" userLabel="1 ETH">
-                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="44.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCx-pY-RSA" userLabel="1 ETH">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-sJ-WnQ">
-                                        <rect key="frame" x="156.5" y="0.0" width="200" height="44.5"/>
+                                        <rect key="frame" x="135" y="0.0" width="200" height="44.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="M92-Gf-1Vq"/>
                                         </constraints>
@@ -66,16 +66,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="dco-uI-YX1" userLabel="XRP Stack">
-                                <rect key="frame" x="9.5" y="488" width="356" height="44.5"/>
+                                <rect key="frame" x="20" y="488" width="335" height="44.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 XRP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGX-Jj-UVT">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="44.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 XRP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGX-Jj-UVT">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <color key="textColor" name="ColorGold"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdj-Bb-4lg">
-                                        <rect key="frame" x="156" y="0.0" width="200" height="44.5"/>
+                                        <rect key="frame" x="135" y="0.0" width="200" height="44.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="mFT-pR-uiF"/>
                                         </constraints>
@@ -123,6 +123,7 @@
                         </subviews>
                         <color key="backgroundColor" name="Color"/>
                         <constraints>
+                            <constraint firstItem="g9y-AB-gnJ" firstAttribute="leading" secondItem="wD0-iw-Qgp" secondAttribute="leading" id="3I2-kS-oOB"/>
                             <constraint firstItem="1Zp-HE-qzs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3PN-Mi-FpI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xs6-gf-ue3" secondAttribute="trailing" constant="20" id="8FB-Y4-HeT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wD0-iw-Qgp" secondAttribute="trailing" constant="20" id="FbI-6P-TX3"/>
@@ -131,9 +132,11 @@
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IZk-Uc-lNB"/>
                             <constraint firstItem="1Zp-HE-qzs" firstAttribute="top" secondItem="wD0-iw-Qgp" secondAttribute="bottom" constant="30" id="OFV-lQ-BVt"/>
                             <constraint firstItem="9SB-0h-2gj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Prb-DV-9sm"/>
+                            <constraint firstItem="qGX-Jj-UVT" firstAttribute="leading" secondItem="VCx-pY-RSA" secondAttribute="leading" id="Q5i-uf-Pqp"/>
                             <constraint firstItem="dco-uI-YX1" firstAttribute="top" secondItem="EPq-7A-c6F" secondAttribute="bottom" constant="40" id="Sw1-wo-d3s"/>
                             <constraint firstItem="wD0-iw-Qgp" firstAttribute="top" secondItem="9SB-0h-2gj" secondAttribute="bottom" constant="15" id="UWI-Zh-cBK"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VEM-Rv-HY1"/>
+                            <constraint firstItem="VCx-pY-RSA" firstAttribute="leading" secondItem="g9y-AB-gnJ" secondAttribute="leading" id="XB6-Pc-DRf"/>
                             <constraint firstItem="xs6-gf-ue3" firstAttribute="top" secondItem="dco-uI-YX1" secondAttribute="bottom" constant="30" id="dgh-g9-l6a"/>
                             <constraint firstItem="8x2-6G-E4o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="dyg-uv-Wdr"/>
                             <constraint firstItem="EPq-7A-c6F" firstAttribute="top" secondItem="1Zp-HE-qzs" secondAttribute="bottom" constant="40" id="g5B-LU-yde"/>
@@ -209,7 +212,6 @@
         <!--Item-->
         <scene sceneID="QQ7-RI-JfP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oc2-hN-Qc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="5XW-qs-fQX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="lc9-zY-GdI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Atc-EU-5kz">
@@ -220,6 +222,7 @@
                         <segue destination="Tld-q0-cdZ" kind="relationship" relationship="rootViewController" id="0Ir-kD-tcI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oc2-hN-Qc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1578" y="1710"/>
         </scene>

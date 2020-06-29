@@ -35,6 +35,9 @@ class WebViewController: UIViewController, WKUIDelegate {
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width / 2.0, y: 44, width: 1.0, height: 1.0)
+        
         self.present(alertController, animated: true)
     }
     

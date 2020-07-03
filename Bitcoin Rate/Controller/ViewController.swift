@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         showActivityIndicator()
         
+        
         bitcoinManager.delegate = self
         bitcoinManager.fetchPrice(currency: "GBP")
         shortCurrName = "￡"

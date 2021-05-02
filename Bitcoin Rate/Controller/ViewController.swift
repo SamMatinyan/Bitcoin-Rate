@@ -19,11 +19,13 @@ class ViewController: UIViewController {
     private var short          = true
     private var cryptoPickerData = ["BTC",
          "ETH",
-         "XRP"
+         "XRP",
+         "🇦🇲"
         ]
     private var currencyPickerData = ["USD",
                                       "GBP",
-                                      "RUB"]
+                                      "RUB",
+                                      "AMD🇦🇲"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,7 +126,11 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        cryptoPickerData.count
+        if component == 0 {
+            return cryptoPickerData.count
+        } else {
+            return currencyPickerData.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

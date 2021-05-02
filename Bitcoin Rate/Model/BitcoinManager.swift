@@ -14,12 +14,14 @@ protocol BitcoinManagerDelegate {
 }
 
 struct BitcoinManager {
-    private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids=BTC,ETH,XRP&interval=ytd"
+    private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids="
+    
+    private var crypto   = "BTC"
     
     var delegate: BitcoinManagerDelegate?
     
     func fetchPrice(currency: String) {
-        let urlString = "\(baseURL)&convert=\(currency)"
+        let urlString = "\(baseURL)\(crypto)&convert=\(currency)" //baseURL+"BTC"+&convert=USD (example)
         performRequest(with: urlString)
     }
     

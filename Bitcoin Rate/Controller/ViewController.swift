@@ -9,20 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var btcLabel: UILabel!
-    @IBOutlet weak var ethLabel: UILabel!
-    @IBOutlet weak var xrpLabel: UILabel!
+    @IBOutlet weak var cryptoPicker: UIPickerView!
+    @IBOutlet weak var currencyPicker: UIPickerView!
     
     private var bitcoinManager = BitcoinManager()
     private let activityView   = UIActivityIndicatorView(style: .medium)
     private var shortCurrName  = ""
     private var currency       = ""
     private var short          = true
+    private var cryptoPickerData = ["BTC",
+         "ETH",
+         "XRP"
+        ]
+    private var currencyPickerData = ["USD",
+                                      "GBP",
+                                      "RUB"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showActivityIndicator()
-        
+        cryptoPicker.dataSource = self
+        cryptoPicker.delegate = self
         
         bitcoinManager.delegate = self
         bitcoinManager.fetchPrice(currency: "GBP")
@@ -84,16 +91,16 @@ extension ViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
         if short == true {
             DispatchQueue.main.async {
-                self.btcLabel.text = bitcoin[0].shortPrice + self.shortCurrName
-                self.ethLabel.text = bitcoin[1].shortPrice + self.shortCurrName
-                self.xrpLabel.text = bitcoin[2].shortPrice + self.shortCurrName
+                //self.btcLabel.text = bitcoin[0].shortPrice + self.shortCurrName
+                //self.ethLabel.text = bitcoin[1].shortPrice + self.shortCurrName
+                //self.xrpLabel.text = bitcoin[2].shortPrice + self.shortCurrName
                 self.activityView.stopAnimating()
             }
         } else {
             DispatchQueue.main.async {
-                self.btcLabel.text = bitcoin[0].price + self.shortCurrName
-                self.ethLabel.text = bitcoin[1].price + self.shortCurrName
-                self.xrpLabel.text = bitcoin[2].price + self.shortCurrName
+                //self.btcLabel.text = bitcoin[0].price + self.shortCurrName
+                //self.ethLabel.text = bitcoin[1].price + self.shortCurrName
+                //self.xrpLabel.text = bitcoin[2].price + self.shortCurrName
                 self.activityView.stopAnimating()
             }
         }
@@ -111,6 +118,22 @@ extension ViewController: BitcoinManagerDelegate {
     }
 }
 
-
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        cryptoPickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return cryptoPickerData[row]
+        } else {
+            return currencyPickerData[row]
+        }
+    }
+}
 
 

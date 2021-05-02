@@ -14,7 +14,7 @@ protocol BitcoinManagerDelegate {
 }
 
 struct BitcoinManager {
-    let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids=BTC,ETH,XRP&interval=ytd"
+    private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids=BTC,ETH,XRP&interval=ytd"
     
     var delegate: BitcoinManagerDelegate?
     
@@ -54,10 +54,7 @@ struct BitcoinManager {
             delegate?.didFailWithError(error: error)
             return nil
         }
-        
     }
-    
-    
 }
 
 

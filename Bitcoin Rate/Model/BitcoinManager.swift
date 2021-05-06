@@ -18,6 +18,9 @@ struct BitcoinManager {
     
     private var crypto   = "BTC"
     
+    private var leftPickerComponent = ["BTC", "ETH", "XRP"]
+    private var rightPickerComponent = ["USD", "GBP", "RUB", "AMD🇦🇲"]
+    
     var delegate: BitcoinManagerDelegate?
     
     func fetchPrice(currency: String) {

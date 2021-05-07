@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     @IBOutlet weak var cryptoPicker: UIPickerView!
     
     private var bitcoinManager = BitcoinManager()
@@ -79,8 +79,8 @@ class ViewController: UIViewController {
         }
     }
 }
-extension ViewController: BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
+extension MainViewController: BitcoinManagerDelegate {
+    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: BitcoinData) {
         if short == true {
             DispatchQueue.main.async {
                 //self.btcLabel.text = bitcoin[0].shortPrice + self.shortCurrName
@@ -110,7 +110,9 @@ extension ViewController: BitcoinManagerDelegate {
     }
 }
 
-extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+//MARK: - UIPickerViewDataSource & Delegate
+
+extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
@@ -129,6 +131,15 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         } else {
             return bitcoinManager.getRightPickerComponent()[row]
         }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            self.bitcoinManager.setCrypto(newValue: bitcoinManager.getLeftPickerComponent()[row])
+        } else {
+            self.bitcoinManager.setCurreny(newValue: bitcoinManager.getRightPickerComponent()[row])
+        }
+        self.bitcoinManager.performRequest(with: <#T##String#>)
     }
 }
 

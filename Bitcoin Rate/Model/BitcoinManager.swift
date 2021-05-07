@@ -9,34 +9,28 @@
 import Foundation
 
 protocol BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData])
+    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: BitcoinData)
     func didFailWithError(error: Error)
 }
 
 struct BitcoinManager {
-    private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids="
-    
-    private var crypto = "BTC"
-    
-    private var leftPickerComponent = ["BTC", "ETH", "XRP"]
-    private var rightPickerComponent = ["USD", "GBP", "RUB", "AMD🇦🇲"]
     
     var delegate: BitcoinManagerDelegate?
     
-    func getLeftPickerComponent() -> [String] {
-        return leftPickerComponent
-    }
+    private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids="
     
-    func getRightPickerComponent() -> [String] {
-        return rightPickerComponent
-    }
+    private var crypto = "BTC"
+    private var currency = "USD"
     
-    func fetchPrice(currency: String) {
-        let urlString = "\(baseURL)\(crypto)&convert=\(currency)" //baseURL+"BTC"+&convert=USD (example)
+    private var leftPickerComponent = ["BTC", "ETH", "XRP"]
+    private var rightPickerComponent = ["USD🇺🇸", "GBP🇬🇧", "RUB🇷🇺", "AMD🇦🇲"]
+    
+    func fetchPrice() {
+        let urlString = "\(baseURL)" + "\(crypto)" + "&convert=" + "\(currency)"
         performRequest(with: urlString)
     }
     
-    func performRequest(with urlString: String) {
+    private func performRequest(with urlString: String) {
         
         if let url = URL(string: urlString) {
             
@@ -58,10 +52,10 @@ struct BitcoinManager {
         }
     }
     
-    func parseJSON(_ bitcoinData: Data) -> [BitcoinData]? {
+    func parseJSON(_ bitcoinData: Data) -> BitcoinData? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode([BitcoinData].self, from: bitcoinData)
+            let decodedData = try decoder.decode(BitcoinData.self, from: bitcoinData)
             return decodedData
         } catch {
             delegate?.didFailWithError(error: error)
@@ -70,4 +64,22 @@ struct BitcoinManager {
     }
 }
 
+//MARK: - Getters & Setters
 
+extension BitcoinManager {
+    func getLeftPickerComponent() -> [String] {
+        return leftPickerComponent
+    }
+    
+    func getRightPickerComponent() -> [String] {
+        return rightPickerComponent
+    }
+    
+    mutating func setCrypto(newValue: String) {
+        self.crypto = newValue
+    }
+    
+    mutating func setCurreny(newValue: String) {
+        self.currency = newValue
+    }
+}

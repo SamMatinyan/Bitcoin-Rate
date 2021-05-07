@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var cryptoPicker: UIPickerView!
+    @IBOutlet weak var crypoLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
     private var bitcoinManager = BitcoinManager()
     private let activityView   = UIActivityIndicatorView(style: .medium)
@@ -19,14 +21,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showActivityIndicator()
+        //showActivityIndicator()
         cryptoPicker.dataSource = self
         cryptoPicker.delegate = self
         
         bitcoinManager.delegate = self
-        bitcoinManager.fetchPrice(currency: "GBP")
-        shortCurrName = "￡"
-        currency = "GBP"
+        bitcoinManager.fetchPrice()
+        //shortCurrName = "￡"
+        //currency = "GBP"
     }
     
     //MARK: - Info button pressed
@@ -43,11 +45,11 @@ class MainViewController: UIViewController {
         case 0:
             showActivityIndicator()
             short = true
-            bitcoinManager.fetchPrice(currency: currency)
+            bitcoinManager.fetchPrice()
         case 1:
             showActivityIndicator()
             short = false
-            bitcoinManager.fetchPrice(currency: currency)
+            bitcoinManager.fetchPrice()
         default:
             short = true
         }
@@ -60,19 +62,19 @@ class MainViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             currency = "GBP"
-            bitcoinManager.fetchPrice(currency: currency)
+            bitcoinManager.fetchPrice()
             shortCurrName = "￡"
         case 1:
             currency = "EUR"
-            bitcoinManager.fetchPrice(currency: currency)
+            bitcoinManager.fetchPrice()
             shortCurrName = "€"
         case 2:
             currency = "USD"
-            bitcoinManager.fetchPrice(currency: currency)
+            bitcoinManager.fetchPrice()
             shortCurrName = "＄"
         case 3:
             currency = "RUB"
-            bitcoinManager.fetchPrice(currency: currency)
+            bitcoinManager.fetchPrice()
             shortCurrName = "₽"
         default:
             print("?")
@@ -81,8 +83,10 @@ class MainViewController: UIViewController {
 }
 extension MainViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: BitcoinData) {
+        self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
         if short == true {
             DispatchQueue.main.async {
+                self.valueLabel.text = bitcoin.shortPrice
                 //self.btcLabel.text = bitcoin[0].shortPrice + self.shortCurrName
                 //self.ethLabel.text = bitcoin[1].shortPrice + self.shortCurrName
                 //self.xrpLabel.text = bitcoin[2].shortPrice + self.shortCurrName
@@ -90,6 +94,7 @@ extension MainViewController: BitcoinManagerDelegate {
             }
         } else {
             DispatchQueue.main.async {
+                self.valueLabel.text = bitcoin.price
                 //self.btcLabel.text = bitcoin[0].price + self.shortCurrName
                 //self.ethLabel.text = bitcoin[1].price + self.shortCurrName
                 //self.xrpLabel.text = bitcoin[2].price + self.shortCurrName
@@ -137,9 +142,9 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         if component == 0 {
             self.bitcoinManager.setCrypto(newValue: bitcoinManager.getLeftPickerComponent()[row])
         } else {
-            self.bitcoinManager.setCurreny(newValue: bitcoinManager.getRightPickerComponent()[row])
+            self.bitcoinManager.setCurreny(newValue: String(bitcoinManager.getRightPickerComponent()[row].dropLast()))
         }
-        self.bitcoinManager.performRequest(with: <#T##String#>)
+        self.bitcoinManager.fetchPrice()
     }
 }
 

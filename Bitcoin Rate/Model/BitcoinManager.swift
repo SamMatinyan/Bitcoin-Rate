@@ -75,6 +75,10 @@ extension BitcoinManager {
         return rightPickerComponent
     }
     
+    func getCrypto() -> String {
+        return crypto
+    }
+    
     mutating func setCrypto(newValue: String) {
         self.crypto = newValue
     }

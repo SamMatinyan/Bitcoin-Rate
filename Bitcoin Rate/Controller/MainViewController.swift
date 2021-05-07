@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private let activityView   = UIActivityIndicatorView(style: .medium)
     private var shortCurrName  = ""
     private var currency       = ""
-    private var short          = true
+    private var short          = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,22 +82,16 @@ class MainViewController: UIViewController {
     }
 }
 extension MainViewController: BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: BitcoinData) {
+    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
         self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
         if short == true {
             DispatchQueue.main.async {
-                self.valueLabel.text = bitcoin.shortPrice
-                //self.btcLabel.text = bitcoin[0].shortPrice + self.shortCurrName
-                //self.ethLabel.text = bitcoin[1].shortPrice + self.shortCurrName
-                //self.xrpLabel.text = bitcoin[2].shortPrice + self.shortCurrName
+                self.valueLabel.text = bitcoin[0].shortPrice
                 self.activityView.stopAnimating()
             }
         } else {
             DispatchQueue.main.async {
-                self.valueLabel.text = bitcoin.price
-                //self.btcLabel.text = bitcoin[0].price + self.shortCurrName
-                //self.ethLabel.text = bitcoin[1].price + self.shortCurrName
-                //self.xrpLabel.text = bitcoin[2].price + self.shortCurrName
+                self.valueLabel.text = bitcoin[0].price
                 self.activityView.stopAnimating()
             }
         }

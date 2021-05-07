@@ -117,17 +117,17 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return leftPickerComponent.count
+            return bitcoinManager.getLeftPickerComponent().count
         } else {
-            return rightPickerComponent.count
+            return bitcoinManager.getRightPickerComponent().count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            return leftPickerComponent[row]
+            return bitcoinManager.getLeftPickerComponent()[row]
         } else {
-            return rightPickerComponent[row]
+            return bitcoinManager.getRightPickerComponent()[row]
         }
     }
 }

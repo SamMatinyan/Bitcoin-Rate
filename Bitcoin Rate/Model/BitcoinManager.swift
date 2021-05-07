@@ -16,12 +16,20 @@ protocol BitcoinManagerDelegate {
 struct BitcoinManager {
     private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids="
     
-    private var crypto   = "BTC"
+    private var crypto = "BTC"
     
     private var leftPickerComponent = ["BTC", "ETH", "XRP"]
     private var rightPickerComponent = ["USD", "GBP", "RUB", "AMD🇦🇲"]
     
     var delegate: BitcoinManagerDelegate?
+    
+    func getLeftPickerComponent() -> [String] {
+        return leftPickerComponent
+    }
+    
+    func getRightPickerComponent() -> [String] {
+        return rightPickerComponent
+    }
     
     func fetchPrice(currency: String) {
         let urlString = "\(baseURL)\(crypto)&convert=\(currency)" //baseURL+"BTC"+&convert=USD (example)

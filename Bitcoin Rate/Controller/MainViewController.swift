@@ -21,14 +21,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //showActivityIndicator()
+        showActivityIndicator()
         cryptoPicker.dataSource = self
         cryptoPicker.delegate = self
         
         bitcoinManager.delegate = self
         bitcoinManager.fetchPrice()
-        //shortCurrName = "￡"
-        //currency = "GBP"
     }
     
     //MARK: - Info button pressed
@@ -83,14 +81,15 @@ class MainViewController: UIViewController {
 }
 extension MainViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
-        self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
         if short == true {
             DispatchQueue.main.async {
+                self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
                 self.valueLabel.text = bitcoin[0].shortPrice
                 self.activityView.stopAnimating()
             }
         } else {
             DispatchQueue.main.async {
+                self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
                 self.valueLabel.text = bitcoin[0].price
                 self.activityView.stopAnimating()
             }
@@ -133,6 +132,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        showActivityIndicator()
         if component == 0 {
             self.bitcoinManager.setCrypto(newValue: bitcoinManager.getLeftPickerComponent()[row])
         } else {

@@ -15,8 +15,6 @@ class MainViewController: UIViewController {
     
     private var bitcoinManager = BitcoinManager()
     private let activityView   = UIActivityIndicatorView(style: .medium)
-    private var shortCurrName  = ""
-    private var currency       = ""
     private var short          = false
     
     override func viewDidLoad() {
@@ -29,15 +27,12 @@ class MainViewController: UIViewController {
         bitcoinManager.fetchPrice()
     }
     
-    //MARK: - Info button pressed
-    
     @IBAction func infoButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "segInfo", sender: self)
     }
     
     
     //MARK: - Size change
-    
     @IBAction func sizeDidChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -52,33 +47,8 @@ class MainViewController: UIViewController {
             short = true
         }
     }
-    
-    //MARK: - Currency change
-    
-    @IBAction func currencyDidChange(_ sender: UISegmentedControl) {
-        showActivityIndicator()
-        switch sender.selectedSegmentIndex {
-        case 0:
-            currency = "GBP"
-            bitcoinManager.fetchPrice()
-            shortCurrName = "￡"
-        case 1:
-            currency = "EUR"
-            bitcoinManager.fetchPrice()
-            shortCurrName = "€"
-        case 2:
-            currency = "USD"
-            bitcoinManager.fetchPrice()
-            shortCurrName = "＄"
-        case 3:
-            currency = "RUB"
-            bitcoinManager.fetchPrice()
-            shortCurrName = "₽"
-        default:
-            print("?")
-        }
-    }
 }
+
 extension MainViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
         if short == true {

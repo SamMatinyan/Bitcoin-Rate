@@ -15,5 +15,3 @@ struct BitcoinData: Codable {
         return String(price.dropLast(7))
     }
 }
-
-

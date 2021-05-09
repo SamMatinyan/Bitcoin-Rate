@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-PI-6ns">
-                                <rect key="frame" x="28" y="441" width="320" height="177"/>
+                                <rect key="frame" x="27.5" y="440.5" width="320" height="177.5"/>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Fon-Mz-oKW">
                                 <rect key="frame" x="78.5" y="282" width="218.5" height="124"/>
@@ -108,7 +108,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Rate" image="dollarsign.circle" catalog="system" id="fLR-kv-bAX"/>
                     <connections>
-                        <outlet property="crypoLabel" destination="OMb-Na-YgR" id="QKt-Pc-zxG"/>
+                        <outlet property="cryptoLabel" destination="OMb-Na-YgR" id="QKt-Pc-zxG"/>
                         <outlet property="cryptoPicker" destination="tLW-PI-6ns" id="ZJe-wW-VBo"/>
                         <outlet property="valueLabel" destination="ab4-rr-HrZ" id="Dve-xl-voF"/>
                         <segue destination="34h-H6-c6M" kind="presentation" identifier="segInfo" id="Kh2-GU-F8t"/>

@@ -10,10 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBOutlet weak var cryptoPicker: UIPickerView!
-    @IBOutlet weak var crypoLabel: UILabel!
+    @IBOutlet weak var cryptoLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
     private var bitcoinManager = BitcoinManager()
+    private let cryptoCurData  = CryptoCurData()
     private let activityView   = UIActivityIndicatorView(style: .medium)
     private var short          = false
     
@@ -53,14 +54,14 @@ extension MainViewController: BitcoinManagerDelegate {
     func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
         if short == true {
             DispatchQueue.main.async {
-                self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
-                self.valueLabel.text = bitcoin[0].shortPrice
+                self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
+                self.valueLabel.text = bitcoin[0].getShortPrice()
                 self.activityView.stopAnimating()
             }
         } else {
             DispatchQueue.main.async {
-                self.crypoLabel.text = "1 " + bitcoinManager.getCrypto()
-                self.valueLabel.text = bitcoin[0].price
+                self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
+                self.valueLabel.text = bitcoin[0].getPrice()
                 self.activityView.stopAnimating()
             }
         }
@@ -87,26 +88,26 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return bitcoinManager.getLeftPickerComponent().count
+            return cryptoCurData.getLeftPickerComponent().count
         } else {
-            return bitcoinManager.getRightPickerComponent().count
+            return cryptoCurData.getRightPickerComponent().count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            return bitcoinManager.getLeftPickerComponent()[row]
+            return cryptoCurData.getLeftPickerComponent()[row]
         } else {
-            return bitcoinManager.getRightPickerComponent()[row]
+            return cryptoCurData.getRightPickerComponent()[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         showActivityIndicator()
         if component == 0 {
-            self.bitcoinManager.setCrypto(newValue: bitcoinManager.getLeftPickerComponent()[row])
+            self.bitcoinManager.setCrypto(newValue: cryptoCurData.getLeftPickerComponent()[row])
         } else {
-            self.bitcoinManager.setCurreny(newValue: String(bitcoinManager.getRightPickerComponent()[row].dropLast()))
+            self.bitcoinManager.setCurreny(newValue: String(cryptoCurData.getRightPickerComponent()[row].dropLast()))
         }
         self.bitcoinManager.fetchPrice()
     }

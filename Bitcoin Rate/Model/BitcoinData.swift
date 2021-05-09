@@ -9,9 +9,18 @@
 import Foundation
 
 struct BitcoinData: Codable {
-    let price: String
     
-    var shortPrice: String {
+    private let price: String
+    
+    private var shortPrice: String {
         return String(price.dropLast(7))
+    }
+    
+    func getPrice() -> String {
+        return price
+    }
+    
+    func getShortPrice() -> String {
+        return shortPrice
     }
 }

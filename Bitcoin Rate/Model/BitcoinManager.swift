@@ -22,9 +22,6 @@ struct BitcoinManager {
     private var crypto   = "BTC"
     private var currency = "USD"
     
-    private var leftPickerComponent = ["BTC", "ETH", "XRP"]
-    private var rightPickerComponent = ["USD🇺🇸", "GBP🇬🇧", "RUB🇷🇺", "AMD🇦🇲"]
-    
     func fetchPrice() {
         let urlString = "\(baseURL)" + "\(crypto)" + "&convert=" + "\(currency)"
         performRequest(with: urlString)
@@ -67,14 +64,6 @@ struct BitcoinManager {
 //MARK: - Getters & Setters
 
 extension BitcoinManager {
-    func getLeftPickerComponent() -> [String] {
-        return leftPickerComponent
-    }
-    
-    func getRightPickerComponent() -> [String] {
-        return rightPickerComponent
-    }
-    
     func getCrypto() -> String {
         return crypto
     }

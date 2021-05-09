@@ -9,7 +9,7 @@
 import Foundation
 
 struct CryptoCurData {
-    private var leftPickerComponent = ["BTC", "ETH", "XRP"]
+    private var leftPickerComponent  = ["BTC", "ETH", "XRP"]
     private var rightPickerComponent = ["USD🇺🇸", "GBP🇬🇧", "RUB🇷🇺", "AMD🇦🇲"]
     
     func getLeftPickerComponent() -> [String] {

@@ -64,6 +64,7 @@ struct BitcoinManager {
 //MARK: - Getters & Setters
 
 extension BitcoinManager {
+    
     func getCrypto() -> String {
         return crypto
     }

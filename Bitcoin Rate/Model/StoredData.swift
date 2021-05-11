@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CryptoCurData {
+struct StoredData {
     
     private var symbol = "֏"
     

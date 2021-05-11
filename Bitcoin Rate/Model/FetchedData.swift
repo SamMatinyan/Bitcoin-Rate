@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BitcoinData: Codable {
+struct FetchedData: Codable {
     
     private let price: String
     

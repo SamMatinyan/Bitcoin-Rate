@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		18225D4424310CA300D19671 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18225D4324310CA300D19671 /* InfoViewController.swift */; };
 		184B3CD0242E24DA00F4AC8C /* NetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B3CCF242E24DA00F4AC8C /* NetworkingHelper.swift */; };
-		184B3CD3242E252C00F4AC8C /* BitcoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B3CD2242E252C00F4AC8C /* BitcoinData.swift */; };
+		184B3CD3242E252C00F4AC8C /* FetchedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B3CD2242E252C00F4AC8C /* FetchedData.swift */; };
 		18911787242BA65B00C5DD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911786242BA65B00C5DD62 /* AppDelegate.swift */; };
 		18911789242BA65B00C5DD62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18911788242BA65B00C5DD62 /* SceneDelegate.swift */; };
 		1891178B242BA65B00C5DD62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891178A242BA65B00C5DD62 /* MainViewController.swift */; };
@@ -17,13 +17,13 @@
 		18911790242BA65C00C5DD62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1891178F242BA65C00C5DD62 /* Assets.xcassets */; };
 		18911793242BA65C00C5DD62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18911791242BA65C00C5DD62 /* LaunchScreen.storyboard */; };
 		189DA9F42496C07700AFAEB8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DA9F32496C07700AFAEB8 /* WebViewController.swift */; };
-		18FA14B82647F2AC00AD7810 /* CryptoCurData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA14B72647F2AC00AD7810 /* CryptoCurData.swift */; };
+		18FA14B82647F2AC00AD7810 /* StoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA14B72647F2AC00AD7810 /* StoredData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18225D4324310CA300D19671 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		184B3CCF242E24DA00F4AC8C /* NetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelper.swift; sourceTree = "<group>"; };
-		184B3CD2242E252C00F4AC8C /* BitcoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinData.swift; sourceTree = "<group>"; };
+		184B3CD2242E252C00F4AC8C /* FetchedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedData.swift; sourceTree = "<group>"; };
 		18911783242BA65B00C5DD62 /* Bitcoin Rate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Rate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18911786242BA65B00C5DD62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18911788242BA65B00C5DD62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +33,7 @@
 		18911792242BA65C00C5DD62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18911794242BA65C00C5DD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189DA9F32496C07700AFAEB8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		18FA14B72647F2AC00AD7810 /* CryptoCurData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurData.swift; sourceTree = "<group>"; };
+		18FA14B72647F2AC00AD7810 /* StoredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				184B3CCF242E24DA00F4AC8C /* NetworkingHelper.swift */,
-				184B3CD2242E252C00F4AC8C /* BitcoinData.swift */,
-				18FA14B72647F2AC00AD7810 /* CryptoCurData.swift */,
+				184B3CD2242E252C00F4AC8C /* FetchedData.swift */,
+				18FA14B72647F2AC00AD7810 /* StoredData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,11 +180,11 @@
 				1891178B242BA65B00C5DD62 /* MainViewController.swift in Sources */,
 				18911787242BA65B00C5DD62 /* AppDelegate.swift in Sources */,
 				184B3CD0242E24DA00F4AC8C /* NetworkingHelper.swift in Sources */,
-				18FA14B82647F2AC00AD7810 /* CryptoCurData.swift in Sources */,
+				18FA14B82647F2AC00AD7810 /* StoredData.swift in Sources */,
 				18911789242BA65B00C5DD62 /* SceneDelegate.swift in Sources */,
 				189DA9F42496C07700AFAEB8 /* WebViewController.swift in Sources */,
 				18225D4424310CA300D19671 /* InfoViewController.swift in Sources */,
-				184B3CD3242E252C00F4AC8C /* BitcoinData.swift in Sources */,
+				184B3CD3242E252C00F4AC8C /* FetchedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

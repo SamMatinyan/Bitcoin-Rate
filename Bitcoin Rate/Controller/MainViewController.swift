@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var valueLabel: UILabel!
     
     private var networkingHelper = NetworkingHelper()
-    private var cryptoCurData  = CryptoCurData()
+    private var cryptoCurData  = StoredData()
     private let activityView   = UIActivityIndicatorView(style: .medium)
     private var short          = false
     
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [BitcoinData]) {
+    func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [FetchedData]) {
         if short == true {
             DispatchQueue.main.async {
                 self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()

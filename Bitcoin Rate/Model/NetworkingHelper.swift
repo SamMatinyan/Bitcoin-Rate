@@ -9,7 +9,7 @@
 import Foundation
 
 protocol BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [BitcoinData])
+    func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [FetchedData])
     func didFailWithError(error: Error)
 }
 
@@ -49,10 +49,10 @@ class NetworkingHelper {
         }
     }
     
-    func parseJSON(_ bitcoinData: Data) -> [BitcoinData]? {
+    func parseJSON(_ bitcoinData: Data) -> [FetchedData]? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode([BitcoinData].self, from: bitcoinData)
+            let decodedData = try decoder.decode([FetchedData].self, from: bitcoinData)
             return decodedData
         } catch {
             delegate?.didFailWithError(error: error)

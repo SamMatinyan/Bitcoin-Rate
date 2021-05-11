@@ -88,26 +88,26 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return cryptoCurData.getLeftPickerComponent().count
+            return cryptoCurData.getLeftPickerComponentSorted().count
         } else {
-            return cryptoCurData.getRightPickerComponent().count
+            return cryptoCurData.getRightPickerComponentSortedKeys().count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            return cryptoCurData.getLeftPickerComponent()[row]
+            return cryptoCurData.getLeftPickerComponentSorted()[row]
         } else {
-            return cryptoCurData.getRightPickerComponent()[row]
+            return cryptoCurData.getRightPickerComponentSortedKeys()[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         showActivityIndicator()
         if component == 0 {
-            self.bitcoinManager.setCrypto(newValue: cryptoCurData.getLeftPickerComponent()[row])
+            self.bitcoinManager.setCrypto(newValue: cryptoCurData.getLeftPickerComponentSorted()[row])
         } else {
-            self.bitcoinManager.setCurreny(newValue: String(cryptoCurData.getRightPickerComponent()[row].dropLast()))
+            self.bitcoinManager.setCurreny(newValue: String(cryptoCurData.getRightPickerComponentSortedKeys()[row].dropLast()))
         }
         self.bitcoinManager.fetchPrice()
     }

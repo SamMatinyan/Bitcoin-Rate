@@ -22,4 +22,8 @@ struct CryptoCurData {
     func getRightPickerComponentSortedKeys() -> [String] {
         return rightPickerComponent.keys.sorted()
     }
+    
+    func getRightPickerComponent() -> [String : String] {
+        return rightPickerComponent
+    }
 }

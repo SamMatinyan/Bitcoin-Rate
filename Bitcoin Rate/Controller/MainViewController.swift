@@ -61,7 +61,7 @@ extension MainViewController: BitcoinManagerDelegate {
         } else {
             DispatchQueue.main.async {
                 self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
-                self.valueLabel.text = bitcoin[0].getPrice()
+                self.valueLabel.text = bitcoin[0].getPrice() + bitcoinManager.getSymbol()
                 self.activityView.stopAnimating()
             }
         }
@@ -108,6 +108,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             self.bitcoinManager.setCrypto(newValue: cryptoCurData.getLeftPickerComponentSorted()[row])
         } else {
             self.bitcoinManager.setCurreny(newValue: String(cryptoCurData.getRightPickerComponentSortedKeys()[row].dropLast()))
+            self.bitcoinManager.setSymbol(newValue: cryptoCurData.getRightPickerComponent()[cryptoCurData.getRightPickerComponentSortedKeys()[row]] ?? "")
         }
         self.bitcoinManager.fetchPrice()
     }

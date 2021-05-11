@@ -21,6 +21,7 @@ struct BitcoinManager {
     
     private var crypto   = "BTC"
     private var currency = "AMD"
+    private var symbol   = "֏"
     
     func fetchPrice() {
         let urlString = "\(baseURL)" + "\(crypto)" + "&convert=" + "\(currency)"
@@ -69,11 +70,19 @@ extension BitcoinManager {
         return crypto
     }
     
+    func getSymbol() -> String {
+        return symbol
+    }
+    
     mutating func setCrypto(newValue: String) {
         self.crypto = newValue
     }
     
     mutating func setCurreny(newValue: String) {
         self.currency = newValue
+    }
+    
+    mutating func setSymbol(newValue: String) {
+        self.symbol = newValue
     }
 }

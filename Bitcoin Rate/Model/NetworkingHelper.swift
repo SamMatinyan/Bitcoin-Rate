@@ -9,11 +9,11 @@
 import Foundation
 
 protocol BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData])
+    func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [BitcoinData])
     func didFailWithError(error: Error)
 }
 
-struct BitcoinManager {
+class NetworkingHelper {
     
     var delegate: BitcoinManagerDelegate?
     
@@ -64,7 +64,7 @@ struct BitcoinManager {
 
 //MARK: - Getters & Setters
 
-extension BitcoinManager {
+extension NetworkingHelper {
     
     func getCrypto() -> String {
         return crypto
@@ -74,15 +74,15 @@ extension BitcoinManager {
         return symbol
     }
     
-    mutating func setCrypto(newValue: String) {
+    func setCrypto(newValue: String) {
         self.crypto = newValue
     }
     
-    mutating func setCurreny(newValue: String) {
+    func setCurreny(newValue: String) {
         self.currency = newValue
     }
     
-    mutating func setSymbol(newValue: String) {
+    func setSymbol(newValue: String) {
         self.symbol = newValue
     }
 }

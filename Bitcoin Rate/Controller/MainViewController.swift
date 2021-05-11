@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cryptoLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
-    private var bitcoinManager = BitcoinManager()
+    private var networkingHelper = NetworkingHelper()
     private let cryptoCurData  = CryptoCurData()
     private let activityView   = UIActivityIndicatorView(style: .medium)
     private var short          = false
@@ -24,8 +24,8 @@ class MainViewController: UIViewController {
         cryptoPicker.dataSource = self
         cryptoPicker.delegate = self
         
-        bitcoinManager.delegate = self
-        bitcoinManager.fetchPrice()
+        networkingHelper.delegate = self
+        networkingHelper.fetchPrice()
     }
     
     @IBAction func infoButtonPressed(_ sender: UIButton) {
@@ -39,11 +39,11 @@ class MainViewController: UIViewController {
         case 0:
             showActivityIndicator()
             short = true
-            bitcoinManager.fetchPrice()
+            networkingHelper.fetchPrice()
         case 1:
             showActivityIndicator()
             short = false
-            bitcoinManager.fetchPrice()
+            networkingHelper.fetchPrice()
         default:
             short = true
         }
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: BitcoinManagerDelegate {
-    func didUpdate(_ bitcoinManager: BitcoinManager, bitcoin: [BitcoinData]) {
+    func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [BitcoinData]) {
         if short == true {
             DispatchQueue.main.async {
                 self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
@@ -107,12 +107,12 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         showActivityIndicator()
         let currentSelectedCurrency = cryptoCurData.getSortedCurrencies()[row]
         if component == 0 { //CRYPTO
-            self.bitcoinManager.setCrypto(newValue: cryptoCurData.getSortedCryptoPickerItems()[row])
+            self.networkingHelper.setCrypto(newValue: cryptoCurData.getSortedCryptoPickerItems()[row])
         } else {            //CURRENCY
-            self.bitcoinManager.setCurreny(newValue: String(currentSelectedCurrency.dropLast()))//Drops Emoji(flag)
-            self.bitcoinManager.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
+            self.networkingHelper.setCurreny(newValue: String(currentSelectedCurrency.dropLast()))//Drops Emoji(flag)
+            self.networkingHelper.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
         }
-        self.bitcoinManager.fetchPrice()
+        self.networkingHelper.fetchPrice()
     }
 }
 

@@ -88,27 +88,28 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return cryptoCurData.getLeftPickerComponentSorted().count
+            return cryptoCurData.getSortedCryptoPickerItems().count
         } else {
-            return cryptoCurData.getRightPickerComponentSortedKeys().count
+            return cryptoCurData.getSortedCurrencies().count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            return cryptoCurData.getLeftPickerComponentSorted()[row]
+            return cryptoCurData.getSortedCryptoPickerItems()[row]
         } else {
-            return cryptoCurData.getRightPickerComponentSortedKeys()[row]
+            return cryptoCurData.getSortedCurrencies()[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         showActivityIndicator()
+        let currentSelectedCurrency = cryptoCurData.getSortedCurrencies()[row]
         if component == 0 {
-            self.bitcoinManager.setCrypto(newValue: cryptoCurData.getLeftPickerComponentSorted()[row])
+            self.bitcoinManager.setCrypto(newValue: currentSelectedCurrency)
         } else {
-            self.bitcoinManager.setCurreny(newValue: String(cryptoCurData.getRightPickerComponentSortedKeys()[row].dropLast()))
-            self.bitcoinManager.setSymbol(newValue: cryptoCurData.getRightPickerComponent()[cryptoCurData.getRightPickerComponentSortedKeys()[row]] ?? "")
+            self.bitcoinManager.setCurreny(newValue: String(currentSelectedCurrency.dropLast())) //Drops flag Emoji
+            self.bitcoinManager.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
         }
         self.bitcoinManager.fetchPrice()
     }

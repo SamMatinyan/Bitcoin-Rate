@@ -9,6 +9,9 @@
 import Foundation
 
 struct CryptoCurData {
+    
+    private var symbol = "֏"
+    
     private var cryptoPickerComponent  = ["BTC" : "Bitcoin",
                                           "ETH" : "Etherium",
                                           "XRP" : "Ripple"]
@@ -17,6 +20,12 @@ struct CryptoCurData {
                                            "GBP🇬🇧" : "£",
                                            "RUB🇷🇺" : "₽",
                                            "AMD🇦🇲" : "֏"]
+    
+    //MARK: - Getters & Setters
+    
+    func getSymbol() -> String {
+        return symbol
+    }
     
     func getSortedCryptoPickerItems() -> [String] {
         return cryptoPickerComponent.keys.sorted()
@@ -32,5 +41,9 @@ struct CryptoCurData {
     
     func getCurrencyPickerDictionary() -> [String : String] {
         return currencyPickerComponent
+    }
+    
+    mutating func setSymbol(newValue: String) {
+        self.symbol = newValue
     }
 }

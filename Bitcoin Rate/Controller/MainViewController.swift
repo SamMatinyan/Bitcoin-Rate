@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var valueLabel: UILabel!
     
     private var networkingHelper = NetworkingHelper()
-    private let cryptoCurData  = CryptoCurData()
+    private var cryptoCurData  = CryptoCurData()
     private let activityView   = UIActivityIndicatorView(style: .medium)
     private var short          = false
     
@@ -61,7 +61,7 @@ extension MainViewController: BitcoinManagerDelegate {
         } else {
             DispatchQueue.main.async {
                 self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
-                self.valueLabel.text = bitcoin[0].getPrice() + bitcoinManager.getSymbol()
+                self.valueLabel.text = bitcoin[0].getPrice() + self.cryptoCurData.getSymbol()
                 self.activityView.stopAnimating()
             }
         }
@@ -110,7 +110,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             self.networkingHelper.setCrypto(newValue: cryptoCurData.getSortedCryptoPickerItems()[row])
         } else {            //CURRENCY
             self.networkingHelper.setCurreny(newValue: String(currentSelectedCurrency.dropLast()))//Drops Emoji(flag)
-            self.networkingHelper.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
+            self.cryptoCurData.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
         }
         self.networkingHelper.fetchPrice()
     }

@@ -21,7 +21,6 @@ class NetworkingHelper {
     
     private var crypto   = "BTC"
     private var currency = "AMD"
-    private var symbol   = "֏"
     
     func fetchPrice() {
         let urlString = "\(baseURL)" + "\(crypto)" + "&convert=" + "\(currency)"
@@ -70,19 +69,11 @@ extension NetworkingHelper {
         return crypto
     }
     
-    func getSymbol() -> String {
-        return symbol
-    }
-    
     func setCrypto(newValue: String) {
         self.crypto = newValue
     }
     
     func setCurreny(newValue: String) {
         self.currency = newValue
-    }
-    
-    func setSymbol(newValue: String) {
-        self.symbol = newValue
     }
 }

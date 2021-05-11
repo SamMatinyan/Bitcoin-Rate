@@ -96,7 +96,8 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            return cryptoCurData.getSortedCryptoPickerItems()[row]
+            let whatNeedToBePresented = cryptoCurData.getSortedCryptoPickerItems()[row]
+            return  whatNeedToBePresented + " (\(cryptoCurData.getCryptoPickerDictionary()[whatNeedToBePresented] ?? ""))"
         } else {
             return cryptoCurData.getSortedCurrencies()[row]
         }
@@ -108,7 +109,7 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         if component == 0 { //CRYPTO
             self.bitcoinManager.setCrypto(newValue: cryptoCurData.getSortedCryptoPickerItems()[row])
         } else {            //CURRENCY
-            self.bitcoinManager.setCurreny(newValue: String(currentSelectedCurrency.dropLast())) //Drops flag Emoji
+            self.bitcoinManager.setCurreny(newValue: String(currentSelectedCurrency.dropLast()))//Drops Emoji(flag)
             self.bitcoinManager.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
         }
         self.bitcoinManager.fetchPrice()

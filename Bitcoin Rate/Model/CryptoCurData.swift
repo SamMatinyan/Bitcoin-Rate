@@ -9,18 +9,25 @@
 import Foundation
 
 struct CryptoCurData {
-    private var cryptoPickerComponent  = ["BTC", "ETH", "XRP"]
+    private var cryptoPickerComponent  = ["BTC" : "Bitcoin",
+                                          "ETH" : "Etherium",
+                                          "XRP" : "Ripple"]
+    
     private var currencyPickerComponent = ["USD🇺🇸" : "$",
                                            "GBP🇬🇧" : "£",
                                            "RUB🇷🇺" : "₽",
                                            "AMD🇦🇲" : "֏"]
     
     func getSortedCryptoPickerItems() -> [String] {
-        return cryptoPickerComponent.sorted()
+        return cryptoPickerComponent.keys.sorted()
     }
     
     func getSortedCurrencies() -> [String] {
         return currencyPickerComponent.keys.sorted()
+    }
+    
+    func getCryptoPickerDictionary() -> [String : String] {
+        return cryptoPickerComponent
     }
     
     func getCurrencyPickerDictionary() -> [String : String] {

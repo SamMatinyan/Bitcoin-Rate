@@ -8,23 +8,17 @@
 
 import Foundation
 
-protocol BitcoinManagerDelegate {
+protocol NetworkingHelperDelegate {
     func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [FetchedData])
     func didFailWithError(error: Error)
 }
 
 class NetworkingHelper {
     
-    var delegate: BitcoinManagerDelegate?
+    var delegate: NetworkingHelperDelegate?
     
-    private let baseURL = "https://api.nomics.com/v1/currencies/ticker?key=eaa9144b8f293102f8d5548b0d4298fd&ids="
-    
-    private var crypto   = "BTC"
-    private var currency = "AMD"
-    
-    func fetchPrice() {
-        let urlString = "\(baseURL)" + "\(crypto)" + "&convert=" + "\(currency)"
-        performRequest(with: urlString)
+    func fetch(urlToFetch: String) {
+        performRequest(with: urlToFetch)
     }
     
     private func performRequest(with urlString: String) {
@@ -61,19 +55,3 @@ class NetworkingHelper {
     }
 }
 
-//MARK: - Getters & Setters
-
-extension NetworkingHelper {
-    
-    func getCrypto() -> String {
-        return crypto
-    }
-    
-    func setCrypto(newValue: String) {
-        self.crypto = newValue
-    }
-    
-    func setCurreny(newValue: String) {
-        self.currency = newValue
-    }
-}

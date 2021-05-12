@@ -14,9 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var valueLabel: UILabel!
     
     private var networkingHelper = NetworkingHelper()
-    private var cryptoCurData  = StoredData()
-    private let activityView   = UIActivityIndicatorView(style: .medium)
-    private var short          = false
+    private var storedData       = StoredData()
+    private let activityView     = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,43 +24,26 @@ class MainViewController: UIViewController {
         cryptoPicker.delegate = self
         
         networkingHelper.delegate = self
-        networkingHelper.fetchPrice()
+        networkingHelper.fetch(urlToFetch: storedData.getFullURLToFetch())
     }
     
     @IBAction func infoButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "segInfo", sender: self)
     }
-    
-    
-    //MARK: - Size change
-    @IBAction func sizeDidChange(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            showActivityIndicator()
-            short = true
-            networkingHelper.fetchPrice()
-        case 1:
-            showActivityIndicator()
-            short = false
-            networkingHelper.fetchPrice()
-        default:
-            short = true
-        }
-    }
 }
 
-extension MainViewController: BitcoinManagerDelegate {
+extension MainViewController: NetworkingHelperDelegate {
     func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [FetchedData]) {
-        if short == true {
+        if storedData.isShort() {
             DispatchQueue.main.async {
-                self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
+                self.cryptoLabel.text = "1 " + self.storedData.getCrypto()
                 self.valueLabel.text = bitcoin[0].getShortPrice()
                 self.activityView.stopAnimating()
             }
         } else {
             DispatchQueue.main.async {
-                self.cryptoLabel.text = "1 " + bitcoinManager.getCrypto()
-                self.valueLabel.text = bitcoin[0].getPrice() + self.cryptoCurData.getSymbol()
+                self.cryptoLabel.text = "1 " + self.storedData.getCrypto()
+                self.valueLabel.text = bitcoin[0].getPrice() + self.storedData.getSymbol()
                 self.activityView.stopAnimating()
             }
         }
@@ -88,31 +70,31 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return cryptoCurData.getSortedCryptoPickerItems().count
+            return storedData.getSortedCryptoPickerItems().count
         } else {
-            return cryptoCurData.getSortedCurrencies().count
+            return storedData.getSortedCurrencies().count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
-            let whatNeedToBePresented = cryptoCurData.getSortedCryptoPickerItems()[row]
-            return  whatNeedToBePresented + " (\(cryptoCurData.getCryptoPickerDictionary()[whatNeedToBePresented] ?? ""))"
+            let whatNeedToBePresented = storedData.getSortedCryptoPickerItems()[row]
+            return  whatNeedToBePresented + " (\(storedData.getCryptoPickerDictionary()[whatNeedToBePresented] ?? ""))"
         } else {
-            return cryptoCurData.getSortedCurrencies()[row]
+            return storedData.getSortedCurrencies()[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         showActivityIndicator()
-        let currentSelectedCurrency = cryptoCurData.getSortedCurrencies()[row]
+        let currentSelectedCurrency = storedData.getSortedCurrencies()[row]
         if component == 0 { //CRYPTO
-            self.networkingHelper.setCrypto(newValue: cryptoCurData.getSortedCryptoPickerItems()[row])
+            self.storedData.setCrypto(newValue: storedData.getSortedCryptoPickerItems()[row])
         } else {            //CURRENCY
-            self.networkingHelper.setCurreny(newValue: String(currentSelectedCurrency.dropLast()))//Drops Emoji(flag)
-            self.cryptoCurData.setSymbol(newValue: cryptoCurData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
+            self.storedData.setCurrency(newValue: String(currentSelectedCurrency.dropLast()))//Drops Emoji(flag)
+            self.storedData.setSymbol(newValue: storedData.getCurrencyPickerDictionary()[currentSelectedCurrency] ?? "")
         }
-        self.networkingHelper.fetchPrice()
+        self.networkingHelper.fetch(urlToFetch: storedData.getFullURLToFetch())
     }
 }
 

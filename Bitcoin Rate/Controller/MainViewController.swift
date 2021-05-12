@@ -34,18 +34,18 @@ class MainViewController: UIViewController {
 
 extension MainViewController: NetworkingHelperDelegate {
     func didUpdate(_ bitcoinManager: NetworkingHelper, bitcoin: [FetchedData]) {
-        if storedData.isShort() {
-            DispatchQueue.main.async {
-                self.cryptoLabel.text = "1 " + self.storedData.getCrypto()
-                self.valueLabel.text = bitcoin[0].getShortPrice()
-                self.activityView.stopAnimating()
+        var finalValue: String {
+            if storedData.isShort() {
+                return bitcoin[0].getShortPrice()
+            } else {
+                return bitcoin[0].getPrice()
             }
-        } else {
-            DispatchQueue.main.async {
-                self.cryptoLabel.text = "1 " + self.storedData.getCrypto()
-                self.valueLabel.text = bitcoin[0].getPrice() + self.storedData.getSymbol()
-                self.activityView.stopAnimating()
-            }
+        }
+        
+        DispatchQueue.main.async {
+            self.cryptoLabel.text = "1 " + self.storedData.getCrypto()
+            self.valueLabel.text = finalValue
+            self.activityView.stopAnimating()
         }
     }
     
@@ -53,7 +53,7 @@ extension MainViewController: NetworkingHelperDelegate {
         print(error)
     }
     
-    func showActivityIndicator() {
+    private func showActivityIndicator() {
         activityView.color = .darkGray
         activityView.center = self.view.center
         self.view.addSubview(activityView)

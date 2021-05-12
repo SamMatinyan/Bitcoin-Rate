@@ -17,6 +17,9 @@
 		18911790242BA65C00C5DD62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1891178F242BA65C00C5DD62 /* Assets.xcassets */; };
 		18911793242BA65C00C5DD62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18911791242BA65C00C5DD62 /* LaunchScreen.storyboard */; };
 		189DA9F42496C07700AFAEB8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DA9F32496C07700AFAEB8 /* WebViewController.swift */; };
+		18F5BF60264C52B700D2E3F4 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F5BF5F264C52B700D2E3F4 /* Info.storyboard */; };
+		18F5BF64264C53EE00D2E3F4 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5BF63264C53EE00D2E3F4 /* IntroViewController.swift */; };
+		18F5BF67264C541000D2E3F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F5BF66264C541000D2E3F4 /* PageViewController.swift */; };
 		18FA14B82647F2AC00AD7810 /* StoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA14B72647F2AC00AD7810 /* StoredData.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		18911792242BA65C00C5DD62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18911794242BA65C00C5DD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189DA9F32496C07700AFAEB8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		18F5BF5F264C52B700D2E3F4 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		18F5BF63264C53EE00D2E3F4 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		18F5BF66264C541000D2E3F4 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		18FA14B72647F2AC00AD7810 /* StoredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				1891178C242BA65B00C5DD62 /* Main.storyboard */,
+				18F5BF5F264C52B700D2E3F4 /* Info.storyboard */,
+				18911791242BA65C00C5DD62 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -61,6 +69,7 @@
 				1891178A242BA65B00C5DD62 /* MainViewController.swift */,
 				18225D4324310CA300D19671 /* InfoViewController.swift */,
 				189DA9F32496C07700AFAEB8 /* WebViewController.swift */,
+				18F5BF62264C53D400D2E3F4 /* Intro */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,10 +109,18 @@
 				184B3CCE242E24B600F4AC8C /* Controller */,
 				184B3CCD242E24AB00F4AC8C /* View */,
 				1891178F242BA65C00C5DD62 /* Assets.xcassets */,
-				18911791242BA65C00C5DD62 /* LaunchScreen.storyboard */,
 				18911794242BA65C00C5DD62 /* Info.plist */,
 			);
 			path = "Bitcoin Rate";
+			sourceTree = "<group>";
+		};
+		18F5BF62264C53D400D2E3F4 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				18F5BF63264C53EE00D2E3F4 /* IntroViewController.swift */,
+				18F5BF66264C541000D2E3F4 /* PageViewController.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +183,7 @@
 			files = (
 				18911793242BA65C00C5DD62 /* LaunchScreen.storyboard in Resources */,
 				18911790242BA65C00C5DD62 /* Assets.xcassets in Resources */,
+				18F5BF60264C52B700D2E3F4 /* Info.storyboard in Resources */,
 				1891178E242BA65B00C5DD62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +195,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F5BF64264C53EE00D2E3F4 /* IntroViewController.swift in Sources */,
+				18F5BF67264C541000D2E3F4 /* PageViewController.swift in Sources */,
 				1891178B242BA65B00C5DD62 /* MainViewController.swift in Sources */,
 				18911787242BA65B00C5DD62 /* AppDelegate.swift in Sources */,
 				184B3CD0242E24DA00F4AC8C /* NetworkingHelper.swift in Sources */,
